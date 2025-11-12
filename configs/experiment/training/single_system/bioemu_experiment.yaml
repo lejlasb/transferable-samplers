@@ -1,0 +1,28 @@
+# @package _global_
+
+defaults:
+  - override /model: normalizing_flow
+  - override /model/net: tarflow_single_system
+  - override /data: single_system/bioemu  # Only this line changed
+  - override /trainer: gpu
+
+model:
+  net:
+    channels: 256
+    img_size: 414  # 138 atoms × 3 = 414
+    num_blocks: 6
+    layers_per_block: 6
+
+  sampling_config:
+    num_proposal_samples: 10_000
+    num_test_proposal_samples: 10_000
+
+data:
+  batch_size: 8
+  com_augmentation: true
+  num_eval_samples: 500
+
+trainer:
+  check_val_every_n_epoch: 50
+  max_epochs: 1000
+  num_sanity_val_steps: 0
