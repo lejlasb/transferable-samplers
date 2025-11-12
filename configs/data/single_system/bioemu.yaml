@@ -1,0 +1,11 @@
+_target_: src.data.bioemu_datamodule.LocalSinglePeptideDataModule
+data_dir: /home/prg/Lejla_data/normalizing_flows/transferable-samplers/bioemu/chignolin-test/
+sequence: GYDPETGTWG
+temperature: 300
+batch_size: 512
+num_workers: 1
+pin_memory: False
+num_dimensions: 3
+num_atoms: 138
+com_augmentation: true
+num_eval_samples: 10_000
